@@ -15,7 +15,7 @@
     return [[self alloc]init];
 }
 
-/** fffffff自定义View的构造方法，初始化就会调用 */
+/** ffgggffsfsfsfff自定义View的构造方法，初始化就会调用 */
 -(instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
