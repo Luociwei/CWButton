@@ -11,8 +11,6 @@
 
 @interface CWButton ()
 
-@property(nonatomic) CWButtonEdgeInsetsStyle cw_ButtonType;
-
 @end
 
 @implementation CWButton
@@ -36,6 +34,13 @@
     return self;
 }
 
+-(void)setCw_buttonOrigin:(CGPoint)cw_buttonOrigin
+{
+    _cw_buttonOrigin = cw_buttonOrigin;
+    self.xh_X = cw_buttonOrigin.x;
+    self.xh_Y = cw_buttonOrigin.y;
+}
+
 -(void)setCw_imageSize:(CGSize)cw_imageSize
 {
     _cw_imageSize = cw_imageSize;
@@ -43,11 +48,13 @@
     self.xh_Height = _cw_imageSize.height;
 }
 
--(void)cw_configImageViewSize:(CGSize)imageSize middleSpace:(CGFloat)middleSpace
+-(void)cw_configButtonOrigin:(CGPoint)origin ImageViewSize:(CGSize)size middleSpace:(CGFloat)middleSpace
 {
-    _cw_imageSize = imageSize;
+    self.cw_buttonOrigin = origin;
     
-    _cw_middleSpace = middleSpace;
+    self.cw_imageSize = size;
+    
+    self.cw_middleSpace = middleSpace;
 }
 
 -(void)setImage:(UIImage *)image forState:(UIControlState)state

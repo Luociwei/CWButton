@@ -32,9 +32,8 @@
         [_btn setImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
         [_btn setTitle:@"fs" forState:UIControlStateNormal];
         _btn.titleLabel.font = [UIFont systemFontOfSize:13];
-        _btn.cw_imageSize = CGSizeMake(40, 40);
-        _btn.cw_middleSpace = 5;
-       // _btn.cw_ButtonType = CWButtonEdgeInsetsStyleTop;
+        [_btn cw_configButtonOrigin:CGPointMake(100, 100) ImageViewSize:CGSizeMake(40, 40) middleSpace:5];
+        
         _btn.backgroundColor = [UIColor grayColor];
         [self.view addSubview:_btn];
     }

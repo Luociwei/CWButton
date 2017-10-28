@@ -20,14 +20,18 @@ typedef NS_ENUM(NSUInteger, CWButtonEdgeInsetsStyle) {
 
 +(instancetype)cw_buttonWithEdgeInsetsStyle:(CWButtonEdgeInsetsStyle)buttonType;
 
-@property (nonatomic, assign) CGFloat cw_middleSpace;
-
-@property (nonatomic, assign) CGSize cw_imageSize;
-
--(void)cw_configImageViewSize:(CGSize)size middleSpace:(CGFloat)middleSpace;
+-(void)cw_configButtonOrigin:(CGPoint)origin ImageViewSize:(CGSize)size middleSpace:(CGFloat)middleSpace;
 
 @property (nonatomic, assign) CGFloat cw_labelMaxLabelWith;
 
 -(void)cw_updateButton;
+
+@property (nonatomic, assign) CGPoint cw_buttonOrigin;
+
+@property (nonatomic, assign) CGSize cw_imageSize;
+
+@property(nonatomic) CWButtonEdgeInsetsStyle cw_ButtonType;
+
+@property (nonatomic, assign) CGFloat cw_middleSpace;
 
 @end
