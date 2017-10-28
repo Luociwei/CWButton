@@ -16,7 +16,6 @@
 		882EEF9C1F982D3600280087 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEF9B1F982D3600280087 /* ____Tests.m */; };
 		882EEFA71F982D3600280087 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEFA61F982D3600280087 /* ____UITests.m */; };
 		882EEFB61F98316400280087 /* CWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEFB51F98316400280087 /* CWButton.m */; };
-		882EEFB91F9831DA00280087 /* UIView+XHFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEFB81F9831DA00280087 /* UIView+XHFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +54,6 @@
 		882EEFA81F982D3600280087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		882EEFB41F98316400280087 /* CWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWButton.h; sourceTree = "<group>"; };
 		882EEFB51F98316400280087 /* CWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWButton.m; sourceTree = "<group>"; };
-		882EEFB71F9831DA00280087 /* UIView+XHFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XHFrame.h"; sourceTree = "<group>"; };
-		882EEFB81F9831DA00280087 /* UIView+XHFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XHFrame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +104,6 @@
 		882EEF801F982D3500280087 /* 按钮练习 */ = {
 			isa = PBXGroup;
 			children = (
-				882EEFB71F9831DA00280087 /* UIView+XHFrame.h */,
-				882EEFB81F9831DA00280087 /* UIView+XHFrame.m */,
 				882EEFB41F98316400280087 /* CWButton.h */,
 				882EEFB51F98316400280087 /* CWButton.m */,
 				882EEF841F982D3500280087 /* AppDelegate.h */,
@@ -287,7 +282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				882EEF891F982D3500280087 /* ViewController.m in Sources */,
-				882EEFB91F9831DA00280087 /* UIView+XHFrame.m in Sources */,
 				882EEF861F982D3500280087 /* AppDelegate.m in Sources */,
 				882EEF831F982D3500280087 /* main.m in Sources */,
 				882EEFB61F98316400280087 /* CWButton.m in Sources */,
@@ -526,6 +520,7 @@
 				882EEFAD1F982D3600280087 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882EEFAE1F982D3600280087 /* Build configuration list for PBXNativeTarget "按钮练习Tests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +529,7 @@
 				882EEFB01F982D3600280087 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882EEFB11F982D3600280087 /* Build configuration list for PBXNativeTarget "按钮练习UITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +538,7 @@
 				882EEFB31F982D3600280087 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

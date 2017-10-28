@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, CWButtonEdgeInsetsStyle) {
+    CWButtonEdgeInsetsStyleTop, // image在上，label在下
+    CWButtonEdgeInsetsStyleLeft, // image在左，label在右
+    CWButtonEdgeInsetsStyleBottom, // image在下，label在上
+    CWButtonEdgeInsetsStyleRight // image在右，label在左
+};
+
+
 @interface CWButton : UIButton
 
 +(instancetype)cw_button;
+
+@property(nonatomic) CWButtonEdgeInsetsStyle cw_ButtonType;
 
 @property (nonatomic, assign) CGFloat cw_middleSpace;
 

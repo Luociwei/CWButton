@@ -35,6 +35,7 @@
         _btn.titleLabel.font = [UIFont systemFontOfSize:13];
         _btn.cw_imageSize = CGSizeMake(40, 40);
         _btn.cw_middleSpace = 10;
+        _btn.cw_ButtonType = CWButtonEdgeInsetsStyleTop;
         _btn.backgroundColor = [UIColor grayColor];
         [self.view addSubview:_btn];
     }

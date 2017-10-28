@@ -8,6 +8,11 @@
 
 #import "CWButton.h"
 
+@interface CWButton ()
+
+
+@end
+
 @implementation CWButton
 
 +(instancetype)cw_button
@@ -15,20 +20,16 @@
     return [[self alloc]init];
 }
 
-/** ffgggffsfsfsfff自定义View的构造方法，初始化就会调用 */
+/** 自定义View的构造方法，初始化就会调用 */
 -(instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
         [self setNeedsLayout];
+        self.cw_ButtonType = CWButtonEdgeInsetsStyleLeft;
     }
     return self;
 }
 
--(void)setImageSize:(CGSize)imageSize
-{
-    _cw_imageSize = imageSize;
-   
-}
 
 
 -(void)cw_configImageViewSize:(CGSize)imageSize middleSpace:(CGFloat)middleSpace
@@ -65,19 +66,57 @@
         NSLog(@"没有设置按钮内部图片的内容或大小");
         return;
     }
-
-    self.imageView.frame = (CGRect){(CGPointZero),{self.cw_imageSize.width,self.cw_imageSize.height}};
     
-    CGRect titleLabelFrame = self.titleLabel.frame;
-    titleLabelFrame.origin.x = self.imageView.frame.size.width+self.cw_middleSpace;
-    self.titleLabel.frame = titleLabelFrame;
-    CGPoint titleLabelCenter = self.titleLabel.center;
-    titleLabelCenter.y = self.imageView.center.y;
-    self.titleLabel.center = titleLabelCenter;
-    [self.titleLabel sizeToFit];
- 
-    self.frame = (CGRect){(self.frame.origin),{self.titleLabel.frame.origin.x + self.cw_middleSpace + self.titleLabel.frame.size.width,self.imageView.frame.size.height}};
-   
+    switch (self.cw_ButtonType) {
+        case CWButtonEdgeInsetsStyleTop:{
+            
+            [self.titleLabel sizeToFit];
+            CGRect titleLabelFrame = self.titleLabel.frame;
+            titleLabelFrame.origin.y = self.imageView.frame.size.height+self.cw_middleSpace;
+            titleLabelFrame.origin.x = 0;
+            self.titleLabel.frame = titleLabelFrame;
+            
+            self.imageView.frame = (CGRect){(CGPointZero),{self.cw_imageSize.width,self.cw_imageSize.height}};
+            CGPoint imageViewCenter = self.imageView.center;
+            imageViewCenter.x = self.titleLabel.center.x;
+            self.imageView.center = imageViewCenter;
+            
+            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.frame.size.width,self.imageView.frame.size.height+self.cw_middleSpace + self.titleLabel.frame.size.height}};
+            
+        }break;
+            
+        case CWButtonEdgeInsetsStyleLeft:{
+            
+            self.imageView.frame = (CGRect){(CGPointZero),{self.cw_imageSize.width,self.cw_imageSize.height}};
+            [self.titleLabel sizeToFit];
+            CGRect titleLabelFrame = self.titleLabel.frame;
+            titleLabelFrame.origin.x = self.imageView.frame.size.width+self.cw_middleSpace;
+            self.titleLabel.frame = titleLabelFrame;
+            CGPoint titleLabelCenter = self.titleLabel.center;
+            titleLabelCenter.y = self.imageView.center.y;
+            self.titleLabel.center = titleLabelCenter;
+            
+            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.frame.origin.x + self.cw_middleSpace + self.titleLabel.frame.size.width,self.imageView.frame.size.height}};
+            
+        }break;
+            
+        case CWButtonEdgeInsetsStyleBottom:{
+            
+            
+            
+        }break;
+            
+        case CWButtonEdgeInsetsStyleRight:{
+            
+            
+            
+        }break;
+            
+        default:
+            break;
+    }
+    
+    
 }
 
 
