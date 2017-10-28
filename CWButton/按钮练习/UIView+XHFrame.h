@@ -17,7 +17,7 @@
 /**  控件的Y坐标 */
 @property (nonatomic,assign) CGFloat  xh_Y;
 
-@property (nonatomic, assign) CGPoint *xh_Origin;
+//@property (nonatomic, assign) CGPoint *xh_Origin;
 
 /**  控件的宽度 */
 @property (nonatomic,assign) CGFloat  xh_Width;

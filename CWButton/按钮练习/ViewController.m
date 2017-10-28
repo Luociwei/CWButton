@@ -31,10 +31,10 @@
     if (_btn == nil) {
         _btn = [CWButton buttonWithType:UIButtonTypeCustom];
         [_btn setImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
-        [_btn setTitle:@"WOAIDA咖" forState:UIControlStateNormal];
+        [_btn setTitle:@"咖" forState:UIControlStateNormal];
         _btn.titleLabel.font = [UIFont systemFontOfSize:13];
         _btn.cw_imageSize = CGSizeMake(40, 40);
-        _btn.cw_middleSpace = 10;
+        _btn.cw_middleSpace = 5;
         _btn.cw_ButtonType = CWButtonEdgeInsetsStyleTop;
         _btn.backgroundColor = [UIColor grayColor];
         [self.view addSubview:_btn];

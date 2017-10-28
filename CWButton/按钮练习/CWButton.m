@@ -31,7 +31,12 @@
     return self;
 }
 
-
+-(void)setCw_imageSize:(CGSize)cw_imageSize
+{
+    _cw_imageSize = cw_imageSize;
+    self.xh_Width = _cw_imageSize.width;
+    self.xh_Height = _cw_imageSize.height;
+}
 
 -(void)cw_configImageViewSize:(CGSize)imageSize middleSpace:(CGFloat)middleSpace
 {
@@ -72,20 +77,33 @@
         case CWButtonEdgeInsetsStyleTop:{
             
             [self.titleLabel sizeToFit];
-            self.titleLabel.xh_Y = self.cw_imageSize.height + self.cw_middleSpace;
-            self.titleLabel.xh_X = 0;
             
-            self.imageView.xh_CenterX = self.titleLabel.xh_CenterX;
-            self.imageView.xh_Width = self.cw_imageSize.width;
-            self.imageView.xh_Height = self.cw_imageSize.height;
+            if (self.titleLabel.xh_Width > self.imageView.xh_Width) {
+                
+                self.titleLabel.xh_Y = self.imageView.xh_Height + self.cw_middleSpace;
+                self.titleLabel.xh_X = 0;
+                
+                self.imageView.xh_CenterX = self.titleLabel.xh_CenterX;
+                self.imageView.xh_Y = 0;
+         
+                self.frame = (CGRect){(self.frame.origin),{self.titleLabel.xh_Width,self.imageView.xh_Height+self.cw_middleSpace + self.titleLabel.xh_Height}};
+            }else{
+                self.imageView.xh_X = 0;
+                self.imageView.xh_Y = 0;
+                
+                self.titleLabel.xh_Y = self.imageView.xh_Height + self.cw_middleSpace;
+                self.titleLabel.xh_CenterX = self.imageView.xh_CenterX;
+                self.frame = (CGRect){(self.frame.origin),{self.imageView.xh_Width,self.imageView.xh_Height+self.cw_middleSpace + self.titleLabel.xh_Height}};
+            }
             
-            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.xh_Width,self.imageView.xh_Height+self.cw_middleSpace + self.titleLabel.xh_Height}};
+            
             
         }break;
             
         case CWButtonEdgeInsetsStyleLeft:{
             
-            self.imageView.frame = (CGRect){(CGPointZero),{self.cw_imageSize.width,self.cw_imageSize.height}};
+            self.imageView.xh_X = 0;
+            self.imageView.xh_Y = 0;
             [self.titleLabel sizeToFit];
 
             self.titleLabel.xh_X = self.imageView.xh_Width + self.cw_middleSpace;
@@ -97,12 +115,27 @@
             
         case CWButtonEdgeInsetsStyleBottom:{
             
+            [self.titleLabel sizeToFit];
+            self.titleLabel.xh_Y = self.cw_imageSize.height + self.cw_middleSpace;
+            self.titleLabel.xh_X = 0;
+            
+            self.imageView.xh_CenterX = self.titleLabel.xh_CenterX;
+            self.imageView.xh_Width = self.cw_imageSize.width;
+            self.imageView.xh_Height = self.cw_imageSize.height;
+            
+            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.xh_Width,self.imageView.xh_Height+self.cw_middleSpace + self.titleLabel.xh_Height}};
             
             
         }break;
             
         case CWButtonEdgeInsetsStyleRight:{
             
+            [self.titleLabel sizeToFit];
+            self.titleLabel.xh_X = 0;
+            self.titleLabel.xh_CenterY = self.imageView.xh_Height/2;
+            self.imageView.xh_X = self.titleLabel.xh_Right + self.cw_middleSpace;
+            self.imageView.xh_Y = 0;
+            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.xh_X + self.cw_middleSpace + self.titleLabel.xh_Width,self.imageView.xh_Height}};
             
             
         }break;
