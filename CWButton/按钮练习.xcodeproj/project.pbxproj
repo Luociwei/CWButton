@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D68ADF21FA465B800DED60B /* UIView+XHFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68ADF11FA465B800DED60B /* UIView+XHFrame.m */; };
 		882EEF831F982D3500280087 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEF821F982D3500280087 /* main.m */; };
 		882EEF861F982D3500280087 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEF851F982D3500280087 /* AppDelegate.m */; };
 		882EEF891F982D3500280087 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882EEF881F982D3500280087 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D68ADF01FA465B800DED60B /* UIView+XHFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XHFrame.h"; sourceTree = "<group>"; };
+		5D68ADF11FA465B800DED60B /* UIView+XHFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XHFrame.m"; sourceTree = "<group>"; };
 		882EEF7E1F982D3500280087 /* 按钮练习.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "按钮练习.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		882EEF821F982D3500280087 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		882EEF841F982D3500280087 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 		882EEF801F982D3500280087 /* 按钮练习 */ = {
 			isa = PBXGroup;
 			children = (
+				5D68ADF01FA465B800DED60B /* UIView+XHFrame.h */,
+				5D68ADF11FA465B800DED60B /* UIView+XHFrame.m */,
 				882EEFB41F98316400280087 /* CWButton.h */,
 				882EEFB51F98316400280087 /* CWButton.m */,
 				882EEF841F982D3500280087 /* AppDelegate.h */,
@@ -282,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				882EEF891F982D3500280087 /* ViewController.m in Sources */,
+				5D68ADF21FA465B800DED60B /* UIView+XHFrame.m in Sources */,
 				882EEF861F982D3500280087 /* AppDelegate.m in Sources */,
 				882EEF831F982D3500280087 /* main.m in Sources */,
 				882EEFB61F98316400280087 /* CWButton.m in Sources */,

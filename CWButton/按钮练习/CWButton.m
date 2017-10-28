@@ -7,6 +7,7 @@
 //
 
 #import "CWButton.h"
+#import "UIView+XHFrame.h"
 
 @interface CWButton ()
 
@@ -71,17 +72,14 @@
         case CWButtonEdgeInsetsStyleTop:{
             
             [self.titleLabel sizeToFit];
-            CGRect titleLabelFrame = self.titleLabel.frame;
-            titleLabelFrame.origin.y = self.imageView.frame.size.height+self.cw_middleSpace;
-            titleLabelFrame.origin.x = 0;
-            self.titleLabel.frame = titleLabelFrame;
+            self.titleLabel.xh_Y = self.cw_imageSize.height + self.cw_middleSpace;
+            self.titleLabel.xh_X = 0;
             
-            self.imageView.frame = (CGRect){(CGPointZero),{self.cw_imageSize.width,self.cw_imageSize.height}};
-            CGPoint imageViewCenter = self.imageView.center;
-            imageViewCenter.x = self.titleLabel.center.x;
-            self.imageView.center = imageViewCenter;
+            self.imageView.xh_CenterX = self.titleLabel.xh_CenterX;
+            self.imageView.xh_Width = self.cw_imageSize.width;
+            self.imageView.xh_Height = self.cw_imageSize.height;
             
-            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.frame.size.width,self.imageView.frame.size.height+self.cw_middleSpace + self.titleLabel.frame.size.height}};
+            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.xh_Width,self.imageView.xh_Height+self.cw_middleSpace + self.titleLabel.xh_Height}};
             
         }break;
             
@@ -89,14 +87,11 @@
             
             self.imageView.frame = (CGRect){(CGPointZero),{self.cw_imageSize.width,self.cw_imageSize.height}};
             [self.titleLabel sizeToFit];
-            CGRect titleLabelFrame = self.titleLabel.frame;
-            titleLabelFrame.origin.x = self.imageView.frame.size.width+self.cw_middleSpace;
-            self.titleLabel.frame = titleLabelFrame;
-            CGPoint titleLabelCenter = self.titleLabel.center;
-            titleLabelCenter.y = self.imageView.center.y;
-            self.titleLabel.center = titleLabelCenter;
+
+            self.titleLabel.xh_X = self.imageView.xh_Width + self.cw_middleSpace;
+            self.titleLabel.xh_CenterY = self.imageView.xh_CenterY;
             
-            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.frame.origin.x + self.cw_middleSpace + self.titleLabel.frame.size.width,self.imageView.frame.size.height}};
+            self.frame = (CGRect){(self.frame.origin),{self.titleLabel.xh_X + self.cw_middleSpace + self.titleLabel.xh_Width,self.imageView.xh_Height}};
             
         }break;
             
