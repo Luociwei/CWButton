@@ -30,16 +30,7 @@
     frame.origin.y = xh_Y;
     self.frame = frame;
 }
-#pragma  mark - X坐标
-//- (CGPoint)xh_Origin{
-//    return self.frame.origin;
-//}
-//
-//- (void)setXh_Origin:(CGPoint)xh_Origin{
-//    CGRect  frame = self.frame;
-//    frame.origin = xh_Origin;
-//    self.frame = frame;
-//}
+
 #pragma  mark - width宽度
 - (CGFloat)xh_Width{
     return self.frame.size.width;    

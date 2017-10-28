@@ -18,9 +18,7 @@ typedef NS_ENUM(NSUInteger, CWButtonEdgeInsetsStyle) {
 
 @interface CWButton : UIButton
 
-+(instancetype)cw_button;
-
-@property(nonatomic) CWButtonEdgeInsetsStyle cw_ButtonType;
++(instancetype)cw_buttonWithEdgeInsetsStyle:(CWButtonEdgeInsetsStyle)buttonType;
 
 @property (nonatomic, assign) CGFloat cw_middleSpace;
 
