@@ -28,13 +28,13 @@
 -(CWButton *)btn
 {
     if (_btn == nil) {
-        _btn = [CWButton buttonWithType:UIButtonTypeCustom];
+        _btn = [CWButton cw_buttonWithEdgeInsetsStyle:CWButtonEdgeInsetsStyleTop];
         [_btn setImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
         [_btn setTitle:@"fs" forState:UIControlStateNormal];
         _btn.titleLabel.font = [UIFont systemFontOfSize:13];
         _btn.cw_imageSize = CGSizeMake(40, 40);
         _btn.cw_middleSpace = 5;
-        _btn.cw_ButtonType = CWButtonEdgeInsetsStyleTop;
+       // _btn.cw_ButtonType = CWButtonEdgeInsetsStyleTop;
         _btn.backgroundColor = [UIColor grayColor];
         [self.view addSubview:_btn];
     }
