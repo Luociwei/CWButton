@@ -44,8 +44,6 @@
 -(void)setCw_imageSize:(CGSize)cw_imageSize
 {
     _cw_imageSize = cw_imageSize;
-    self.xh_Width = _cw_imageSize.width;
-    self.xh_Height = _cw_imageSize.height;
 }
 
 -(void)cw_configButtonOrigin:(CGPoint)origin ImageViewSize:(CGSize)size middleSpace:(CGFloat)middleSpace
@@ -86,6 +84,8 @@
     }
 
     [self.titleLabel sizeToFit];
+    
+    self.imageView.xh_size = self.cw_imageSize;
     
     switch (self.cw_ButtonType) {
         case CWButtonEdgeInsetsStyleTop:{
