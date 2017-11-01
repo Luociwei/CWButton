@@ -36,7 +36,7 @@
 -(CWButton *)btn
 {
     if (_btn == nil) {
-        _btn = [CWButton cw_buttonWithEdgeInsetsStyle:CWButtonEdgeInsetsStyleTop];
+        _btn = [CWButton new];
         _btn.backgroundColor = [UIColor redColor];
         [_btn setImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
         [_btn setTitle:@"fs" forState:UIControlStateNormal];

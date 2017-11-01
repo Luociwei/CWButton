@@ -30,6 +30,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self setNeedsLayout];
+        self.cw_ButtonType = CWButtonEdgeInsetsStyleLeft;
     }
     return self;
 }
@@ -116,7 +117,7 @@
             
         default:{
             
-            [self setButtonEdgeInsetsStyleLeft];
+            //[self setButtonEdgeInsetsStyleLeft];
         }
             break;
     }
